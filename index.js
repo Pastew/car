@@ -3,6 +3,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var Galileo = require("galileo-io");
+exec = require("child_process").exec;
 var car = require('./car.js');
     $ = require('jquery');
     board = new Galileo();

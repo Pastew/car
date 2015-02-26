@@ -11,20 +11,22 @@
 
 
       <!-- left panel -->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <button class="btn btn-danger btn-block btn-lg" id="led">LED</button><br/>
         <button class="btn btn-primary btn-block btn-lg" id="forward">forward</button><br/>
         <button class="btn btn-primary btn-block btn-lg" id="backward">backward</button>
       </div>
 
-      <div class="col-md-4">
-        <!-- video -->
+      <!-- video -->
+      <div class="col-md-6">
+        <img alt="http://192.168.0.18:8080/?action=stream" src="http://192.168.0.18:8080/?action=stream" height="417" width="556">
       </div>
 
       <!-- right panel -->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <button class="btn btn-primary btn-block btn-lg pull-right" id="right">right</button>
         <button class="btn btn-primary btn-block btn-lg pull-right" id="left">left</button>
+        <button class="btn btn-primary btn-block btn-lg pull-right pull-down" id="stream">stream</button>
       </div>
 
     </div>
@@ -65,6 +67,11 @@
 
       $('#right').mousedown(function(){
         socket.emit('action', 'right');
+        return false;
+      });
+
+      $('#stream').click(function(){
+        socket.emit('action', 'stream');
         return false;
       });
 

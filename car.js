@@ -35,7 +35,7 @@ module.exports = {
     else if(action === "down") down();
     else if(action === "open") open();
     else if(action === "close") close();
-    else if(action === "streamingOn") streamingOn();
+    else if(action === "stream") streamingOn();
     else console.log("Unexpected request action: " + action);
   }
 }
@@ -106,6 +106,6 @@ function turnOffLed(){
 
 function streamingOn(){
   console.log("Turning on video stream...");
-  exec("/home/root/car2/stream.sh", function(err, result) {
+  exec("/home/root/websockets/stream.sh", function(err, result) {
   });
 }
