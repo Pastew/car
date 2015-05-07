@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Car</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <body>
+
+    <div class="row">
+
+
+      <!-- left panel -->
+      <div class="col-md-4">
+        <button class="btn btn-danger btn-block btn-lg" id="led">LED</button><br/>
+        <button class="btn btn-primary btn-block btn-lg" id="forward">forward</button><br/>
+        <button class="btn btn-primary btn-block btn-lg" id="backward">backward</button>
+      </div>
+
+      <div class="col-md-4">
+        <!-- video -->
+      </div>
+
+      <!-- right panel -->
+      <div class="col-md-4">
+        <button class="btn btn-primary btn-block btn-lg pull-right" id="right">right</button>
+        <button class="btn btn-primary btn-block btn-lg pull-right" id="left">left</button>
+      </div>
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/jquery-1.11.2.js"></script>
+    <script>
+      var socket = io();
+
+      function emit(message){
+        socket.emit('action', message);
+        return false;
+      }
+
+      $('#led').mousedown(function(){
+        socket.emit('action', 'ledOn');
+        return false;
+      });
+      $('#led').mouseup(function(){
+        socket.emit('action', 'ledOff');
+        return false;
+      });
+
+      $('#forward').mousedown(function(){
+        socket.emit('action', 'forward');
+        return false;
+      });
+
+      $('#backward').mousedown(function(){
+        socket.emit('action', 'backward');
+        return false;
+      });
+
+      $('#left').mousedown(function(){
+        socket.emit('action', 'left');
+        return false;
+      });
+
+      $('#right').mousedown(function(){
+        socket.emit('action', 'right');
+        return false;
+      });
+
+      $('#forward, #backward, #left, #right').mouseup(function(){
+        socket.emit('action', 'stop');
+        return false;
+      });
+
+      $(document).ready(function() {
+        $(this).keydown(function(e) {
+            e.preventDefault();
+            if(e.keyCode == 87) { emit('forward'); };
+            if(e.keyCode == 83) { emit('backward'); };
+            if(e.keyCode == 65) { emit('left'); };
+            if(e.keyCode == 68) { emit('right'); };
+        });
+
+        $(this).keyup(function(e) {
+            e.preventDefault();
+            emit('stop');
+        });
+      });
+
+    </script>
+  </body>
+</html>
