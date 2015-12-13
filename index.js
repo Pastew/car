@@ -15,7 +15,8 @@ app.get('/', function (req, res) {
 });
 
 io.on('connection', function (socket) {
-    console.log("Ktos przyszedl");
+    console.log("Somebody connected");
+    car.initCar();
     socket.on('action', function (action) {
         car.handleAction(action);
     });
@@ -35,7 +36,7 @@ board.on("ready", function () {
     this.pinMode(L2, this.MODES.OUTPUT);
     this.pinMode(R1, this.MODES.OUTPUT);
     this.pinMode(R2, this.MODES.OUTPUT);
-    this.pinMode(UP_DOWN, this.MODES.OUTPUT);
-    this.pinMode(OPEN_CLOSE, this.MODES.OUTPUT);
+    this.pinMode(PAN, this.MODES.OUTPUT);
+    this.pinMode(TILT, this.MODES.OUTPUT);
     console.log("Output Pins setup completed");
 });
