@@ -3,55 +3,13 @@
 
 <head>
     <title>Car</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 
 <body>
 
-    <div class="row">
-
-
-        <!-- left panel -->
-        <div class="col-md-2">
-            <button class="btn btn-danger btn-block btn-lg" id="led">LED</button>
-            <br/>
-            <!-- both motors speed -->
-            <div class="row">
-                <button class="col-md-5 btn btn-success" id="both-speed-minus">-</button>
-                <button class="col-md-5 btn btn-success" id="both-speed-plus">+</button>
-            </div>
-        </div>
-
-        <!-- video -->
-        <div class="col-md-7">
-            <img alt="http://192.168.0.1:8080/?action=stream" src="http://192.168.0.1:8080/?action=stream" height="417" width="556">
-            <br/>
-            <button class="btn btn-info center-block btn-sm" id="stream">stream</button>
-        </div>
-
-        <!-- right panel -->
-        <div class="col-md-3">
-            <br/>
-            <!-- left-right motors speed -->
-            <div class="row">
-                <div class="col-md-6">
-                    <button class="btn-block btn btn-success btn-lg" id="left-speed-plus">+</button>
-                    <br/>
-                    <button class="btn-block btn btn-success btn-lg" id="left-speed-minus">-</button>
-                </div>
-                <div class="col-md-6">
-                    <button class="btn-block btn btn-success btn-lg" id="right-speed-plus">+</button>
-                    <br/>
-                    <button class="btn-block btn btn-success btn-lg" id="right-speed-minus">-</button>
-                </div>
-            </div>
-
-        </div>
-
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="js/jquery-1.11.2.js"></script>
-        <script src="../input.js"></script>
+<img alt="http://192.168.1.47:8081/?action=stream" src="http://192.168.1.47:8081/?action=stream" height="480" width="640">
+<script src="static/socket.io.js"></script>
+<script src="static/input.js"></script>
 </body>
 
 </html>
