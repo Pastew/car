@@ -86,5 +86,5 @@ sudo service car status
 
 ### Some pictures
 ![Alt text](pictures/2.jpg?raw=true "Car2")
-![Alt text](pictures/2.jpg?raw=true "Car")
+![Alt text](pictures/3.jpg?raw=true "Car")
 ![Alt text](pictures/skechup.PNG?raw=true "Project in SketchFab")
