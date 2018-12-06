@@ -2,6 +2,12 @@
 
 ![Alt text](pictures/1.jpg?raw=true "Car")
 
+### Video on YouTube
+[Link to YouTube](http://www.youtube.com/watch?v=vOVKgLQbhpc)
+
+
+[![](http://img.youtube.com/vi/vOVKgLQbhpc/0.jpg)](http://www.youtube.com/watch?v=vOVKgLQbhpc "Raspberry Pi car")
+
 ### How does it work?
 1. Turn on powerbank
 2. rPi starts a http server using socket.io on port 8080
